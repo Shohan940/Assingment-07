@@ -9,28 +9,32 @@ import TimeLine from './component/timeline/TimeLine.jsx'
 import Stats from './component/stats/Stats.jsx'
 import CardDetails from './component/Cardss/CardDetails.jsx'
 import MoreDetails from './component/Cardss/MoreDetails.jsx'
+import InteractionProvider from './Context/InteractionContext.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element : <RootFile/>,
-    children :[
+    element:
+      <InteractionProvider>
+        <RootFile />
+      </InteractionProvider>,
+    children: [
       {
-        index : true,
-        element : <HomePage/>
+        index: true,
+        element: <HomePage />
       },
       {
-        path : '/timeline',
-        element : <TimeLine/> 
+        path: '/timeline',
+        element: <TimeLine />
       },
       {
-        path : '/stats',
-        element : <Stats/>
+        path: '/stats',
+        element: <Stats />
       },
       {
-        path :'/moredetails/:id',
-        element : <MoreDetails></MoreDetails>,
-        loader : ()=> fetch('/Data.json')
+        path: '/moredetails/:id',
+        element: <MoreDetails></MoreDetails>,
+        loader: () => fetch('/Data.json')
       }
     ]
   }
@@ -38,6 +42,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </StrictMode>,
 )

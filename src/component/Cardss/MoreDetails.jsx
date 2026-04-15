@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router';
 import { useParams } from 'react-router';
 import call from '../../assets/call.png';
 import text from '../../assets/text.png';
 import video from '../../assets/video.png';
+import  {InteractionContext}  from '../../Context/InteractionContext';
 
 const MoreDetails = () => {
     const { id } = useParams();
@@ -11,6 +12,10 @@ const MoreDetails = () => {
     const cads = useLoaderData();
     const expect = cads.find((exat) => exat.id == id)
     // console.log(expect);
+
+    const {addInteraction}=useContext(InteractionContext);
+    // console.log(addInteraction);
+    // console.log("EXPECT:", expect);
     return (
         <div className='max-w-300 mx-auto'>
             <div className='flex justify-center'>
@@ -62,9 +67,9 @@ const MoreDetails = () => {
                     <div>
                         <h2 className='text-2xl'>Quick Check-In </h2>
                         <div className='flex justify-between'>
-                            <button className='btn text-2xl shadow mt-3 p-8 bg-gray-100'><img src={call} alt="" /> </button>
-                            <button className='btn text-2xl shadow mt-3 p-8 bg-gray-100'><img src={text} alt="" /> </button>
-                            <button className='btn text-2xl shadow mt-3 p-8 bg-gray-100'><img src={video} alt="" /> </button>
+                            <button onClick={()=>{console.log("CLICKEd call"); addInteraction(expect,'call');}} className='btn text-2xl shadow mt-3 p-8 bg-gray-100'><img src={call} alt="" /> </button>
+                            <button onClick={()=>{console.log("CLICKED text"); addInteraction(expect,'text')}} className='btn text-2xl shadow mt-3 p-8 bg-gray-100'><img src={text} alt="" /> </button>
+                            <button onClick={()=>{console.log("CLICKED video"); addInteraction(expect,'video')}} className='btn text-2xl shadow mt-3 p-8 bg-gray-100'><img src={video} alt="" /> </button>
                         </div>
                     </div>
                 </div>
