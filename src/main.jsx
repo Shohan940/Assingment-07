@@ -10,6 +10,7 @@ import Stats from './component/stats/Stats.jsx'
 import CardDetails from './component/Cardss/CardDetails.jsx'
 import MoreDetails from './component/Cardss/MoreDetails.jsx'
 import InteractionProvider from './Context/InteractionContext.jsx'
+import NotFound from './component/errorPage/NotFound.jsx'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
       <InteractionProvider>
         <RootFile />
       </InteractionProvider>,
+      errorElement : <NotFound/>,
     children: [
       {
         index: true,
