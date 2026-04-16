@@ -10,8 +10,8 @@ const Cards = () => {
         <div>
             <CardCount />
             <div className='max-w-300 mx-auto mt-10'>
-                <h2>Your Friends</h2>
-                <div className=' grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-15'>
+                <h2 className='text-2xl font-semibold'>Your Friends</h2>
+                <div className=' grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-5 gap-15'>
 
                     {
                         promiseCard.map((card, index) => <CardDetails key={index} card={card} />)

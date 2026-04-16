@@ -7,7 +7,6 @@ const Stats = () => {
     const callCount = interactions.filter(call=>call.type=='call').length;
     const textCount = interactions.filter(text=>text.type=='text').length;
     const videoCount = interactions.filter(video=>video.type=='video').length;
-    // console.log(callCount);
 
     const data = [
         { name: 'call', value:callCount, fill: '#AC7F5E' },

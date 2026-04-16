@@ -5,7 +5,7 @@ export const InteractionContext =createContext()
 
 const InteractionProvider = ({children}) => {
     const [interactions,setInteraction] = useState([]);
-    // console.log("Provider");
+    
 
     const addInteraction = (friend,type)=>{
         const newInteraction = {

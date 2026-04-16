@@ -8,8 +8,7 @@ const TimeLine = () => {
     const [filter, setFilter] = useState('');
 
     const { interactions } = useContext(InteractionContext);
-    // const friends = useLoaderData();
-    // console.log(friends);
+    
     const getIcon = (type) => {
         switch (type) {
             case 'call':

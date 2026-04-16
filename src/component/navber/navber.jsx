@@ -1,4 +1,7 @@
 import React from 'react';
+import { AiOutlineHome } from 'react-icons/ai';
+import { IoMdTime } from 'react-icons/io';
+import { TfiStatsUp } from 'react-icons/tfi';
 import { NavLink } from 'react-router';
 
 const Navber = () => {
@@ -11,9 +14,9 @@ const Navber = () => {
                 </div>
                 
                 <div className="navbar-end gap-2">
-                    <NavLink  to={'/'} className={ ({isActive})=>isActive ? 'btn text-white bg-[#244D3F]':'btn'}>Home</NavLink>
-                    <NavLink to={'/timeline'} className={ ({isActive})=>isActive ? 'btn text-white bg-[#244D3F]':'btn'}>Timeline</NavLink>
-                    <NavLink to={'/stats'} className={ ({isActive})=>isActive ? 'btn text-white bg-[#244D3F]':'btn'}>Stats</NavLink>
+                    <NavLink  to={'/'} className={ ({isActive})=>isActive ? 'btn text-white bg-[#244D3F]':'btn'}><AiOutlineHome /> Home</NavLink>
+                    <NavLink to={'/timeline'} className={ ({isActive})=>isActive ? 'btn text-white bg-[#244D3F]':'btn'}><IoMdTime />Timeline</NavLink>
+                    <NavLink to={'/stats'} className={ ({isActive})=>isActive ? 'btn text-white bg-[#244D3F]':'btn'}><TfiStatsUp />Stats</NavLink>
                 </div>
             </div>
         </div>
